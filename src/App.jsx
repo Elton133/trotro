@@ -1,20 +1,18 @@
 import React from "react";
-import IntroductionPage from "./components/introduction";
-import Navbar from "./components/navbar";
 import "./index.css";
-import FeatureCards from "./components/feature-cards";
-import DownloadPage from "./components/download";
-import OrderButton from "./components/animated-button";
+
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import About from "./pages/about";
+import MissionPage from "./components/mission";
 
 const App = () => {
   return (
-    <div>
-      <Navbar />
-      <IntroductionPage />
-      <FeatureCards />
-      <DownloadPage />
-
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/about" element={<About />}></Route>
+      <Route path="/mission" element={<MissionPage />}></Route>
+    </Routes>
   );
 };
 

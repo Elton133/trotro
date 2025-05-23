@@ -77,7 +77,7 @@ export default function Navbar() {
                 ease: "easeInOut",
               }}
             >
-              <Bus size={30} className="text-green-400" />
+              <Bus size={25} className="text-green-400" />
             </motion.div>
           </Link>
 
@@ -85,20 +85,13 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
+                to={link.href}
                 key={link.name}
-                href={link.href}
-                className="text-gray-200 hover:text-green-400 transition-colors duration-300"
+                className="nav-link text-gray-200 hover:text-green-400 transition-colors duration-300 text-[12px] font-[Euclid-Circular-B]"
               >
                 {link.name}
               </Link>
             ))}
-            <Link
-              href="/login"
-              className="glassmorphism-button-small px-4 py-2 rounded-full flex items-center space-x-2 text-white"
-            >
-              <User size={16} />
-              <span>Login</span>
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -114,7 +107,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-black bg-opacity-80 backdrop-blur-lg transform transition-transform duration-300 ease-in-out ${
+        className={` inset-0 bg-black bg-opacity-80 backdrop-blur-lg transform transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden z-40`}
         onClick={(e) => e.stopPropagation()}
@@ -131,14 +124,14 @@ export default function Navbar() {
               <span>{link.name}</span>
             </Link>
           ))}
-          <Link
+          {/* <Link
             href="/login"
             className="glassmorphism-button mt-4 px-8 py-3 rounded-full flex items-center space-x-2 text-white"
             onClick={() => setIsOpen(false)}
           >
             <User size={18} />
             <span>Login</span>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </nav>

@@ -15,7 +15,7 @@ export default function AnimatedOrderButton() {
   };
 
   return (
-    <div className="order-container">
+    <div className="order-container font-[E`uclid-Circular-B]">
       <button
         className={`order ${
           animate ? "animate" : ""
